@@ -10,7 +10,23 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2018_10_29_190350) do
+ActiveRecord::Schema.define(version: 2018_10_29_195718) do
+
+  create_table "book_recipes", force: :cascade do |t|
+    t.integer "book_id", null: false
+    t.integer "recipe_id", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "books", force: :cascade do |t|
+    t.string "title", null: false
+    t.text "intro"
+    t.text "index"
+    t.text "table_of_contents"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
 
   create_table "group_users", force: :cascade do |t|
     t.integer "user_id", null: false
@@ -22,6 +38,29 @@ ActiveRecord::Schema.define(version: 2018_10_29_190350) do
   create_table "groups", force: :cascade do |t|
     t.string "name", null: false
     t.string "location", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "ingredients", force: :cascade do |t|
+    t.string "name", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "recipe_ingredients", force: :cascade do |t|
+    t.decimal "quantity", precision: 16, scale: 4, null: false
+    t.string "unit", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "recipes", force: :cascade do |t|
+    t.string "name", null: false
+    t.text "description"
+    t.text "instructions", null: false
+    t.integer "group_id"
+    t.integer "user_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
