@@ -10,6 +10,19 @@
   </head>
 
   <body>
+    <header>
+      <h3> My Granny's Recipes</h3>
+     <% if user_signed_in? %>
+      <div class="float-right margin-s clearfix"><%= link_to('Logout', destroy_user_session_path, method: :delete)%> 
+      </div>
+    <% else %>
+     <div class= "float-right margin-s clearfix"><%= link_to('Login',new_user_session_path) %>
+     </div>
+    <% end %>
+    <div class="float-right margin-s clearfix"><%= link_to('Sign Up',new_user_registration_path) %>
+    </div>
+    </header>
+
     <p class="notice"><%= notice %></p>
     <p class="alert"><%= alert %></p>
     <%= yield %>

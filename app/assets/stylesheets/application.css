@@ -13,3 +13,22 @@
  *= require_tree .
  *= require_self
  */
+/*Utilities*/
+
+.float-right {
+  float: right;
+}
+
+.float-left {
+  float: left;
+}
+
+.margin-s {
+  margin: 10px;
+}
+
+/*Components*/
+
+
+
+/*Layouts*/
