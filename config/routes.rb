@@ -1,10 +1,5 @@
 Rails.application.routes.draw do
-  get 'groups/new'
-  get 'groups/create'
-  get 'groups/edit'
-  get 'groups/update'
-  get 'groups/index'
-  get 'groups/show'
+  resources :groups, except: [:update, :create,]
   devise_for :users
-  # root to: "home#index"
+  root to: "home#index"
 end

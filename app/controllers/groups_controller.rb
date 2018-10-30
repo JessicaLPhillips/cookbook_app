@@ -1,5 +1,8 @@
 class GroupsController < ApplicationController
+  before_action :authenticate_user!
+
   def new
+
   end
 
   def create
@@ -15,5 +18,6 @@ class GroupsController < ApplicationController
   end
 
   def show
+    @group = Group.find(params[:id])
   end
 end
