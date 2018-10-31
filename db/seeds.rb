@@ -9,7 +9,7 @@ end
 
 20.times do
 	Group.create({
-		name: Faker::Name.name,
+		name: Faker::Name.last_name,
 		location: Faker::Address.city,
 		users: User.all.sample(10)
 	})
@@ -23,10 +23,11 @@ end
 
 50.times do
 	Recipe.create({
-		name: "#{Faker::Color.color_name} #{Faker::Hipster.words} #{Faker::Ancient.god} #{Faker::Food.dish}",
+		name: "#{Faker::Color.color_name} #{Faker::Hipster.word} #{Faker::Ancient.god} #{Faker::Food.dish}",
 		user: User.all.sample,
 		group: Group.all.sample,
-		instructions: "Mix the eggs"
+		instructions: "Mix the eggs",
+		description: "#{Faker::Seinfeld.quote}"
 	})
 end
 
