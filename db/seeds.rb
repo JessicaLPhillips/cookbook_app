@@ -42,7 +42,6 @@ end
 25.times do
 	Book.create({
 		title: Faker::Book.unique.title,
-		# need to add recipes to books
 		recipes: Recipe.all.sample(6)
 	})
 end
