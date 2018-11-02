@@ -29,7 +29,7 @@ before_action :authenticate_user!
   end
 
   private  
-
+# does not work...
   def recipe_params
     params.require(:recipe).permit(:name, :description)
   end

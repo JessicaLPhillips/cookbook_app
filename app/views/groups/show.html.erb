@@ -1,4 +1,9 @@
 <h1><%= @group.name%></h1>
 <h1><%= @group.location%></h1>
-<h2><%= @group.users%></h2>
-
+<h2> Family Members in this Family: 
+	<% @group.users.each do |user|%>
+	<h3> 
+		<%= user.name%>
+	</h3>
+	<% end %>
+</h2>
