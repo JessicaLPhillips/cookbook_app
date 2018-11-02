@@ -71,5 +71,9 @@ gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 # Add devise
 gem 'devise'
 
+# Add Simple Form for recipe creation
+gem 'simple_form'
 
+# Add Cocoon to handle nested forms
+gem 'cocoon'
 

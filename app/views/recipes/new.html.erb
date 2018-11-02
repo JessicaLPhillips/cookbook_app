@@ -1,10 +1,9 @@
 <h1>Create a New Recipe</h1>
- <div class="">
-      <%= form_for @recipe do |form| %>
-        <div>Title: <%= form.text_field :name %></div>
-        <div>Description: <%= form.text_field :description %></div>
-    </div>
-  </div>
-  <div><%= form.submit %></div>
+<div class="">
+  <%= simple_form_for @recipe do |form| %>
+    <div> <%= form.input :name %></div>
+    <div><%= form.input :description %></div>
+    <div><%= form.input :instructions, as: :text %></div>
+  	<div><%= form.button :submit %></div>
   <% end %>
 </div>
