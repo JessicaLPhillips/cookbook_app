@@ -1,2 +1,10 @@
-<h1>Groups#new</h1>
-<p>Find me in app/views/groups/new.html.erb</p>
+<h1>Create your Family Group!</h1>
+ <div class="">
+      <%= form_for @group do |form| %>
+        <div>Family Name: <%= form.text_field :name %></div>
+        <div>Location: <%= form.text_field :location %></div>
+    </div>
+  </div>
+  <div><%= form.submit %></div>
+  <% end %>
+</div>
