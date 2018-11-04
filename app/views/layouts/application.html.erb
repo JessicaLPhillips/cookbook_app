@@ -9,9 +9,9 @@
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
   </head>
 
-  <body>
-    <header>
-      <h3> Granny's Recipes</h3>
+  <body class="margin-zero">
+    <header class="header">
+      <h2> Granny's Recipes</h2>
      <% if user_signed_in? %>
       <div class="float-right margin-s clearfix"><%= link_to('Logout', destroy_user_session_path, method: :delete)%> 
       </div>
@@ -23,8 +23,8 @@
     </div>
     </header>
 
-    <p class="notice"><%= notice %></p>
-    <p class="alert"><%= alert %></p>
+<!--     <p class="notice"><%= notice %></p>
+    <p class="alert"><%= alert %></p> -->
     <%= yield %>
   </body>
 </html>
