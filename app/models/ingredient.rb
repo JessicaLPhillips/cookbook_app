@@ -4,5 +4,5 @@ class Ingredient < ApplicationRecord
 end
 
 def ingredients
-	"#{recipe_ingredients.quantity} #{recipe_ingredients.unit} #{ingredients.name}"
+	"#{recipe_ingredients.quantity} #{recipe_ingredients.unit} #{ingredients}"
 end

@@ -1,13 +1,21 @@
 <h1>Create a New Recipe</h1>
 <div>
-  <%= simple_form_for @recipe do |form| %>
-    <div class="margin-m"> <%= form.input :name %></div>
-    <div class="margin-m"><%= form.input :description %></div>
+  <%= simple_form_for @recipe do |f| %>
+    <div class="margin-m"> <%= f.input :name %></div>
+    <div class="margin-m"><%= f.input :description %></div>
     <div>
-    <%= form.simple_fields_for :ingredients do |ingredient| %>
-      <%= render 'ingredients_field', :form => ingredient %>
+	<%# simple_form_for @recipe do |form| %>
+  <h3>Ingredients</h3>
+  <div>
+    <%= f.simple_fields_for :ingredients do |ingredient| %>
+      <%= render 'ingredient_fields', :f => ingredient %>
     <% end %>
-    <div class="margin-m"><%= form.input :instructions, as: :text %></div>
-  	<div class="margin-m"><%= form.button :submit %></div>
+    <div>
+      <%= link_to_add_association 'add ingredient', f, :ingredients %>
+    </div>
+  </div>
+  <%# end %>
+    <div class="margin-m"><%= f.input :instructions, as: :text %></div>
+  	<div class="margin-m"><%= f.button :submit %></div>
   <% end %>
 </div>
