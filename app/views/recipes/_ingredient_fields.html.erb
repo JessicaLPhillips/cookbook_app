@@ -1,6 +1,5 @@
 <div>
-    <%= f.input :name %>
+    <%= f.input :name, label: 'Ingredient' %>
     <!-- need to be able to remove ingredients below- change in controller- do I need a migration?? -->
-    <%= f.input	 :_destroy %>
-    <%= link_to_remove_association "remove ingredient", :_destroy %>
+    <%= link_to_remove_association 'Remove Ingredient', f %>
 </div>

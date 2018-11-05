@@ -10,16 +10,16 @@ class RecipesController < ApplicationController
   end
 
   def new
-    @recipe = Recipe.new
+    @recipe = current_user.recipes.new
   end
 
   def create
-    @recipe = Recipe.new(recipe_params)
-
+    @recipe = current_user.recipes.new(recipe_params)
     if @recipe.save
       redirect_to recipe_path(@recipe), notice: "Recipe Created!"
     else
-       render :new
+      flash[:recipe_errors] = @recipe.errors.full_messages
+      render :new
     end
   end
 
@@ -39,7 +39,7 @@ class RecipesController < ApplicationController
 
 private  
   def recipe_params
-    params.require(:recipe).permit(:name, :description, :_destroy)
+    params.require(:recipe).permit(:name, :description, :instructions, ingredients_attributes: [:id, :name, :_destroy])
   end
 end
 
