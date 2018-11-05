@@ -25,20 +25,11 @@ end
 	Recipe.create({
 		name: "#{Faker::Color.color_name} #{Faker::Hipster.word} #{Faker::Ancient.god} #{Faker::Food.dish}",
 		user: User.all.sample,
-		group: Group.all.sample,
 		instructions: "Mix the eggs",
 		description: "#{Faker::Seinfeld.quote}"
 	})
 end
 
-25.times do
-	RecipeIngredient.create ({
-		unit: Faker::Measurement.volume("all"),
-		quantity: Faker::Number.decimal(2),
-		recipe: Recipe.all.sample,
-		ingredient: Ingredient.all.sample,
-	})
-end
 
 25.times do
 	Book.create({

@@ -1,2 +1,9 @@
-<h1><%= @recipe.name%></h1>
-<p>Find me in app/views/recipes/show.html.erb</p>
+<h1><%= @recipe.name %></h1>
+<h2>Description:</h2>
+	<p><%= @recipe.description %></p>
+<h2>Ingredients:</h2>
+	<% @recipe.ingredients.each do |ingredient|%>
+		<p><%= ingredient.name %></p>	
+	<% end %>	
+<h2>Instructions:</h2>
+	<%= @recipe.instructions %>
