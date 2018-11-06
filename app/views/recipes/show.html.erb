@@ -1,6 +1,6 @@
 <h1><%= @recipe.name %></h1>
 <% if @recipe.picture.attached? %>
-	<%= image_tag @recipe.picture %>
+	<%= image_tag @recipe.picture.variant(resize: '100x200') %>
 <% end %>
 <h2>Description:</h2>
 	<p><%= @recipe.description %></p>

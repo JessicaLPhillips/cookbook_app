@@ -1,6 +1,6 @@
 class ProfilesController < ApplicationController
 def show
-  end
+end
 
   def edit
   end
@@ -11,7 +11,7 @@ def show
     if current_user.save
       redirect_to profile_path
     else
- 
+
       render :edit
     end
   end
