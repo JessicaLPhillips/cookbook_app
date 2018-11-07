@@ -3,7 +3,7 @@
     first_name: Faker::Name.first_name,
     last_name: Faker::Name.last_name,
     email: "#{SecureRandom.hex(3)}_#{Faker::Internet.email}",
-    password: SecureRandom.hex(10),
+    password: "password1",
   })
 end
 
