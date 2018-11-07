@@ -7,14 +7,6 @@
   })
 end
 
-20.times do
-	Group.create({
-		name: Faker::Name.last_name,
-		location: Faker::Address.city,
-		users: User.all.sample(10)
-	})
-end	
-
 15.times do
 	Ingredient.create ({
 		name: Faker::Food.unique.ingredient
@@ -26,10 +18,19 @@ end
 		name: "#{Faker::Color.color_name} #{Faker::Hipster.word} #{Faker::Ancient.god} #{Faker::Food.dish}",
 		user: User.all.sample,
 		instructions: "Mix the eggs",
-		description: "#{Faker::Seinfeld.quote}"
+		description: "#{Faker::Seinfeld.quote}",
 	})
 end
 
+20.times do
+	group = Group.create({
+		name: Faker::Name.last_name,
+		location: Faker::Address.city,
+		users: User.all.sample(10)
+	})
+
+	group.recipes << group.users.map { |user| user.recipes.sample(2) }
+end
 
 25.times do
 	Book.create({
