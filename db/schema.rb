@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2018_11_05_161756) do
+ActiveRecord::Schema.define(version: 2018_11_07_153250) do
 
   create_table "book_recipes", force: :cascade do |t|
     t.integer "book_id", null: false
@@ -40,6 +40,11 @@ ActiveRecord::Schema.define(version: 2018_11_05_161756) do
     t.string "location", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+  end
+
+  create_table "groups_recipes", id: false, force: :cascade do |t|
+    t.integer "group_id", null: false
+    t.integer "recipe_id", null: false
   end
 
   create_table "ingredients", force: :cascade do |t|
