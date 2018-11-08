@@ -28,7 +28,7 @@ gem 'jbuilder', '~> 2.5'
 # gem 'bcrypt', '~> 3.1.7'
 # Add wicked_pdf to convert html to pdf for cookbook
 gem 'wicked_pdf'
-gem 'wkhtmltopdf-binary'
+# gem 'wkhtmltopdf-binary'
 # Use ActiveStorage variant
 # gem 'mini_magick', '~> 4.8'
 

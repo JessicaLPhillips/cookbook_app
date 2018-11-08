@@ -1,18 +1,23 @@
+<div class="page-container" style="border: 1px solid red">
+<h1><%= @recipe.name %></h1>
+<h2>Description:</h2>
+  <p><%= @recipe.description %></p>
+<h2>Ingredients:</h2>
+  <% @recipe.ingredients.each do |ingredient|%>
+    <p><%= ingredient.name %></p> 
+  <% end %> 
+<h2>Instructions:</h2>
+  <%= @recipe.instructions %>
+</div>
 
-<!doctype html>
-<html>
-  <head>
-    <meta charset='utf-8' />
-    <%= wicked_pdf_stylesheet_link_tag "pdf" -%>
-    <%= wicked_pdf_javascript_include_tag "number_pages" %>
-  </head>
-  <body onload='number_pages'>
-          hey
-    <div id="header">
-      <%= wicked_pdf_image_tag 'chocolate_cake.jpg' %>
-    </div>
-    <div id="content">
-      <%= yield %>
-    </div>
-  </body>
-</html>
+<div class="page-container always-break"  style="border: 1px solid red">
+  <div class="image">
+   <%= wicked_pdf_image_tag('chocolate_cake.jpg', height: '1200', width: '960')%>
+  </div>
+</div>
+
+<div class="page-container always-break"  style="border: 1px solid red">
+  <div class="image">
+   <%= wicked_pdf_image_tag('black_and_white_photo.jpg', height: '1200', width: '960')%>
+  </div>
+</div>

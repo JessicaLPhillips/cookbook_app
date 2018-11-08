@@ -15,7 +15,10 @@ class RecipesController < ApplicationController
     respond_to do |format|
       format.html
       format.pdf do
-        render pdf: "file_name"   # Excluding ".pdf" extension.
+        render pdf: "file_name", layout: "book",
+           page_size: 'Letter',
+            margin: { right: 1, left: 1, top: 2, bottom: 2 },
+            dpi: 96
       end
     end
   end
