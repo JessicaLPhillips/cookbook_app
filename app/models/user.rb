@@ -9,6 +9,8 @@ class User < ApplicationRecord
 
   has_many :recipes
 
+  has_one_attached :avatar
+
   def name
   	"#{first_name} #{last_name}"
   end	

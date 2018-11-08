@@ -10,7 +10,8 @@ class GroupsController < ApplicationController
       if @group.save
         redirect_to group_path(@group), notice: "Group Created!"
       else
-       render :new
+        flash[:group_errors] = @group.errors.full_messages 
+        render :new
       end
   end
 
@@ -29,6 +30,6 @@ class GroupsController < ApplicationController
   end
 
   def group_params
-    params.require(:group).permit(:name, :location)
+    params.require(:group).permit(:name, :location, :pictures, user_attributes:[:name, :avatar])
   end
 end
