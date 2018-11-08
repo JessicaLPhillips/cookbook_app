@@ -1,6 +1,13 @@
 <h1>Create your Family Group!</h1>
  <div class="">
-      <%= form_for @group do |form| %>
+   <%= form_for @group do |form| %>
+    <% if flash[:group_errors] %>
+      <ul>
+      <% flash[:group_errors].each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+      <% end %>
         <div>Family Name: <%= form.text_field :name %></div>
         <div>Location: <%= form.text_field :location %></div>
     </div>
