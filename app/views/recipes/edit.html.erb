@@ -1,2 +1,29 @@
-<h1>Recipes#edit</h1>
-<p>Find me in app/views/recipes/edit.html.erb</p>
+<h1>Edit Your Recipe</h1>
+<div>
+  <%= simple_form_for @recipe do |f| %>
+    <% if flash[:recipe_errors] %>
+      <ul>
+      <% flash[:recipe_errors].each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    <% end %>
+    <div><%=f.input :picture, as: :file %></div>
+    <div class="margin-m"> <%= f.input :name %></div>
+    <div class="margin-m"><%= f.input :description %></div>
+    <div><%=f.input :category, as: :select,
+     collection: ["Appetizers", "Soups & Salads", "Main Courses", "Breads", "Desserts"] %></div>
+  <h3>Ingredients</h3>
+  <div>
+    <%= f.simple_fields_for :ingredients do |ingredient| %>
+      <%= render 'ingredient_fields', :f => ingredient %>
+    <% end %>
+    <div>
+      <%= link_to_add_association 'Add Ingredient', f, :ingredients %>
+    </div>
+  </div>
+  <%# end %>
+    <div class="margin-m"><%= f.input :instructions, as: :text %></div>
+  	<div class="margin-m"><%= f.button :submit %></div>
+  <% end %>
+</div>

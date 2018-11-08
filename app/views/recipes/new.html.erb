@@ -8,8 +8,11 @@
       <% end %>
       </ul>
     <% end %>
+    <div><%=f.input :picture, as: :file %></div>
     <div class="margin-m"> <%= f.input :name %></div>
     <div class="margin-m"><%= f.input :description %></div>
+    <div><%=f.input :category, as: :select,
+     collection: ["Appetizers", "Soups & Salads", "Main Courses", "Breads", "Desserts"] %></div>
   <h3>Ingredients</h3>
   <div>
     <%= f.simple_fields_for :ingredients do |ingredient| %>
