@@ -1,0 +1,24 @@
+.page-container {
+  clear: both;
+  display: block;
+  height: 1290px;
+  padding-left: 20px;
+  padding-right: 50px;
+  position: relative;
+
+  // &:nth-child(odd) {
+  //   padding-left: 50px;
+  //   padding-right: 20px;
+  // }
+
+  h1 {
+    font-size: 40px;
+  }
+}
+.always-break { 
+  page-break-before: always; 
+}
+
+.image {
+  padding-top: 50px;
+}

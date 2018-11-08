@@ -6,15 +6,30 @@ class RecipesController < ApplicationController
   end
 
   def show
-    @recipe = current_user.recipes.find(params[:id])
+    @recipe = Recipe.find(params[:id])
+
+    # unless @recipe.user == current_user || @recipe.groups.ids.to_set.intersect?(current_user.groups.ids.to_set)
+    #   raise ActionController::RoutingError.new('Not Found')
+    # end
+
+    respond_to do |format|
+      format.html
+      format.pdf do
+        render pdf: "file_name", layout: "book",
+          page_size: 'Letter',
+          margin: { right: 1, left: 1, top: 2, bottom: 2 },
+          dpi: 96
+      end
+    end
   end
 
   def new
-    @recipe = current_user.recipes.new
+    @recipe = Recipe.new
   end
 
   def create
-    @recipe = current_user.recipes.new(recipe_params)
+    @recipe = Recipe.new(recipe_params)
+    @recipe.user = current_user
     if @recipe.save
       redirect_to recipe_path(@recipe), notice: "Recipe Created!"
     else

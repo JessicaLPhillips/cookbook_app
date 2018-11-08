@@ -28,7 +28,8 @@ gem 'jbuilder', '~> 2.5'
 # gem 'bcrypt', '~> 3.1.7'
 # Add wicked_pdf to convert html to pdf for cookbook
 gem 'wicked_pdf'
-gem 'wkhtmltopdf-binary'
+
+# gem 'wkhtmltopdf-binary'
 # add amazon web server
 gem 'aws-sdk-s3', require: false
 
