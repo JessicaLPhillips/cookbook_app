@@ -1,12 +1,15 @@
-<h1><%= @group.name%></h1>
-<h1><%= @group.location%></h1>
-<h2> Family Members in this Family: 
+<h1>Family Name: <%= @group.name%></h1>
+<h1>Location: <%= @group.location%></h1>
+<h2> Family Members: 
 	<% @group.users.each do |user|%>
 	<h3> 
 		<%= user.name%>
 	</h3>
 	<% end %>
 </h2>
+<h2> Recipes In This Family:</h2>
 <% @group.recipes.each do |recipe|%>
-<%= recipe.name %>
+<h3>
+<%= link_to recipe.name, recipe_path(recipe) %>
+</h3>
 <% end %>
