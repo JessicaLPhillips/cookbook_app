@@ -6,34 +6,35 @@
 	    password: "password1",
 	  })
 
-	10.times do
+	5.times do
 		recipe = Recipe.create({
-			name: "#{Faker::Color.color_name} #{Faker::Hipster.word} #{Faker::Ancient.god} #{Faker::Food.dish}",
+			name: "#{Faker::Color.color_name} #{Faker::Food.dish}",
 			user: user,
-			instructions: "Mix the eggs",
-			description: "#{Faker::Seinfeld.quote}"
+			instructions: Faker::Lorem.paragraphs,
+			description: Faker::Food.description
 		})
 
-		5.times do 
+		10.times do 
 			ingredient = Ingredient.create(
-				name:Faker::Food.ingredient
+				name:Faker::Food.ingredient,
+				quantity:Faker::Food.measurement
 			)
 			recipe.ingredients << ingredient
 		end
 	end
 end
 
-20.times do
+10.times do
 	group = Group.create({
 		name: Faker::Name.last_name,
 		location: Faker::Address.city,
-		users: User.all.sample(10)
+		users: User.all.sample(5)
 	})
 
 	group.recipes << group.users.map { |user| user.recipes.sample(2) }
 end
 
-25.times do
+5.times do
 	Book.create({
 		title: Faker::Book.unique.title,
 		recipes: Recipe.all.sample(6)
