@@ -31,6 +31,10 @@ body {
   margin: 10px;
 }
 
+.margin-r {
+	margin-right: 10px;
+}
+
 .margin-m {
 	margin: 50px;
 }
@@ -55,9 +59,10 @@ body {
   left: 0;
 }
 
-.header {
+.header {	
 	background-color: #a69b97c9;
 	height: 100px;
+	line-height: 100px;
 	margin: 0 auto;
 	color: #5c1686;
 }

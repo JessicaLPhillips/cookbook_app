@@ -1,0 +1,46 @@
+<div class="page-container" style="border: 1px solid red">
+   dummy title page
+</div>
+
+<% recipe_pages = {} %>
+<% @book.recipes.each_with_index do |recipe, index| %>
+<% recipe_pages[recipe.id] = ((index) * 2) + 1 %>
+<div class="page-container" style="border: 1px solid red">
+   photo title page
+</div>
+<div class="page-container" style="border: 1px solid red">
+  <h1><%= recipe.name %></h1>
+  <h2>Description:</h2>
+    <p><%= recipe.description %></p>
+  <h2>Ingredients:</h2>
+    <% recipe.ingredients.each do |ingredient|%>
+      <p><%= ingredient.name %></p> 
+    <% end %> 
+  <h2>Instructions:</h2>
+    <%= recipe.instructions %>
+  </div>
+<% end %>
+
+<div class="page-container always-break"  style="border: 1px solid red">
+  <div class="image">
+   <%= wicked_pdf_image_tag('chocolate_cake.jpg', height: '1200', width: '960')%>
+  </div>
+</div>
+
+<div class="page-container always-break"  style="border: 1px solid red">
+  <div class="image">
+   <%= wicked_pdf_image_tag('black_and_white_photo.jpg', height: '1200', width: '960')%>
+  </div>
+</div>
+
+<div class="page-container" style="border: 1px solid red">
+  <h1>Appendix: Recipes by ingredient</h1>
+  <% @grouped_ingredients.each do |ingredient_name, instances| %>
+    <h2><%= ingredient_name %></h2>
+    <ul>
+      <% instances.each do |ingredient| %>
+        <li>....<%= ingredient.recipe.name %> (page <%= recipe_pages[ingredient.recipe.id] %>)</li>
+      <% end %>
+    </ul>
+  <% end %>
+</div>

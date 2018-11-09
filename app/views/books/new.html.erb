@@ -1,2 +1,36 @@
-<h1>Books#new</h1>
-<p>Find me in app/views/books/new.html.erb</p>
+<h1>Create a New Book!</h1>
+<div>
+  <%= simple_form_for @book do |f| %>
+    <% if flash[:book_errors] %>
+      <ul>
+      <% flash[:book_errors].each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    <% end %>
+    <div><%=f.input :picture, as: :file %></div>
+    <div class="margin-m"> <%= f.input :title %></div>
+    <div class="margin-m"><%= f.input :intro %></div>
+  <h3>Recipes</h3>
+  <div>
+  	<ul class="nav nav-tabs" id="myTab" role="tablist">
+  	  <% current_user.groups.each_with_index do |group, index| %>
+	  	  <li class="nav-item">
+	  	  	<a class="nav-link <%= index == 0 ? 'active' : ''%>" id="group-<%= group.id %>-tab" data-toggle="tab" href="#group-<%= group.id %>" role="tab" aria-controls="profile" aria-selected="false"><%= group.name %>' Recipes</a>
+	  	  </li>
+			<% end %>
+  	</ul>
+  	<div class="tab-content" id="myTabContent">
+  	  <% current_user.groups.each_with_index do |group, index| %>
+			  <div class="tab-pane fade show <%= index == 0 ? 'active' : ''%>" id="group-<%= group.id %>" role="tabpanel" aria-labelledby="group-<%= group.id%>-tab">
+		  		WHAT
+		  		<%= f.association :recipes, collection: group.recipes, as: :check_boxes %>
+			  </div>
+			<% end %>
+  	</div>
+
+
+  </div>
+  	<div class="margin-m"><%= f.button :submit %></div>
+  <% end %>
+</div>
