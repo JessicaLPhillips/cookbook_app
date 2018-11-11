@@ -11,7 +11,7 @@
 
   <body class="margin-zero">
     <header class="header">
-      <h2 class="margin-zero float-left"> Granny's Recipes</h2>
+      <h2 class="line-h margin-zero float-left"> Granny's Recipes</h2>
      <% if user_signed_in? %>
       <div class="float-right margin-r clearfix"><%= link_to('Logout', destroy_user_session_path, method: :delete)%> 
       </div>
@@ -23,8 +23,8 @@
     </div>
     </header>
 
-    <p class="notice margin-zero"><%= notice %></p>
-    <p class="alert margin-zero"><%= alert %></p>
+    <p class="notice border-0 m-0 p-0"><%= notice %></p>
+    <p class="alert border-0 m-0 p-0"><%= alert %></p>
     <%= yield %>
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>

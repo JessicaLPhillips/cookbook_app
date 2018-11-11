@@ -57,6 +57,7 @@ body {
   height: auto;
   position: fixed;
   left: 0;
+  color: #5c1686
 }
 
 .header {	
@@ -67,6 +68,10 @@ body {
 	color: #5c1686;
 }
 
+.header h2 {
+	line-height: 100px;
+}
 
-
-/*Layouts*/
+a {
+	color: #5c1686;
+}
