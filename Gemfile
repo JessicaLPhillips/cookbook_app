@@ -73,6 +73,7 @@ end
 group :production do
   # Use Postgres for the production database
   gem 'pg'
+  gem 'faker'
 end
 
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem

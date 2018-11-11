@@ -9,8 +9,8 @@
       </ul>
     <% end %>
     <div><%=f.input :picture, as: :file %></div>
-    <div class="margin-m"> <%= f.input :name %></div>
-    <div class="margin-m"><%= f.input :description %></div>
+    <div class=""> <%= f.input :name %></div>
+    <div class=""><%= f.input :description %></div>
     <div><%=f.input :category, as: :select,
      collection: ["Appetizers", "Soups & Salads", "Main Courses", "Breads", "Desserts"] %></div>
   <h3>Ingredients</h3>
@@ -22,8 +22,7 @@
       <%= link_to_add_association 'Add Ingredient', f, :ingredients %>
     </div>
   </div>
-  <%# end %>
-    <div class="margin-m"><%= f.input :instructions, as: :text %></div>
-  	<div class="margin-m"><%= f.button :submit %></div>
+    <div class=""><%= f.input :instructions, as: :text %></div>
+  	<div class=""><%= f.button :submit %></div>
   <% end %>
 </div>

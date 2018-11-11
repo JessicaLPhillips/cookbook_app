@@ -10,7 +10,7 @@
 		recipe = Recipe.create({
 			name: "#{Faker::Color.color_name} #{Faker::Food.dish}",
 			user: user,
-			instructions: Faker::Lorem.paragraphs,
+			instructions: Faker::Lorem.paragraph(4),
 			description: Faker::Food.description
 		})
 

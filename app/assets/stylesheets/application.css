@@ -15,6 +15,8 @@
 body {
   -webkit-font-smoothing: antialiased;
 /*	font-family: 'Alegreya', serif;*/
+	background-color: #a69b9778;
+	color: #5c1686;
 }
 
 /*Utilities*/
@@ -57,7 +59,7 @@ body {
   height: auto;
   position: fixed;
   left: 0;
-  color: #5c1686
+  color: #5c1686;
 }
 
 .header {	
@@ -75,3 +77,9 @@ body {
 a {
 	color: #5c1686;
 }
+
+.colors {
+	color: #5c1686;
+	background-color: #a69b97c9;
+}
+
