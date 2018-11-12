@@ -1,7 +1,6 @@
 <div class="page-container" style="border: 1px solid red">
    dummy title page
 </div>
-
 <% recipe_pages = {} %>
 <% @book.recipes.each_with_index do |recipe, index| %>
 <% recipe_pages[recipe.id] = ((index) * 2) + 1 %>
