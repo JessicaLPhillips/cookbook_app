@@ -49,6 +49,10 @@ body {
 	margin: 0 auto;
 }
 
+.border-home {
+	border: 1.5px solid #380e50;
+}
+
 /*Components*/
 
 .home_page {
@@ -59,7 +63,7 @@ body {
   height: auto;
   position: fixed;
   left: 0;
-  color: #5c1686;
+  color: #451a5e;
 }
 
 .header {	
@@ -67,7 +71,7 @@ body {
 	height: 100px;
 	line-height: 100px;
 	margin: 0 auto;
-	color: #5c1686;
+	color: #451a5e;
 }
 
 .header h2 {
@@ -75,11 +79,11 @@ body {
 }
 
 a {
-	color: #5c1686;
+	color: #451a5e;
 }
 
 .colors {
-	color: #5c1686;
+	color: #451a5e;
 	background-color: #a69b97c9;
 }
 

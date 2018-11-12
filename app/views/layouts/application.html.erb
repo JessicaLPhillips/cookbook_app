@@ -13,13 +13,13 @@
     <header class="header">
       <h2 class="line-h margin-zero float-left"> Granny's Recipes</h2>
      <% if user_signed_in? %>
-      <div class="float-right margin-r clearfix"><%= link_to('Logout', destroy_user_session_path, method: :delete)%> 
+      <div class="float-right mr-3 clearfix"><%= link_to('Logout', destroy_user_session_path, method: :delete)%> 
       </div>
     <% else %>
-     <div class= "float-right margin-r clearfix"><%= link_to('Login',new_user_session_path) %>
+     <div class= "float-right mr-3 clearfix"><%= link_to('Login',new_user_session_path) %>
      </div>
     <% end %>
-    <div class="float-right margin-r clearfix"><%= link_to('Sign Up',new_user_registration_path) %>
+    <div class="float-right mr-3 clearfix"><%= link_to('Sign Up',new_user_registration_path) %>
     </div>
     </header>
 
