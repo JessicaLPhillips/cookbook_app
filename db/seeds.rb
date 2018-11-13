@@ -8,9 +8,9 @@
 
 	5.times do
 		recipe = Recipe.create({
-			name: "#{Faker::Color.color_name} #{Faker::Food.dish}",
+			name: "#{Faker::Color.color_name.titleize} #{Faker::Food.dish}",
 			user: user,
-			instructions: Faker::Lorem.paragraph(4),
+			instructions: "#{Faker::Lorem.paragraph} #{Faker::Lorem.paragraph} #{Faker::Lorem.paragraph} #{Faker::Lorem.paragraph}",
 			description: Faker::Food.description
 		})
 

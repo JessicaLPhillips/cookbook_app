@@ -1,12 +1,12 @@
 <div class="page-container" style="border: 1px solid red">
- <h1 class="title-page"><%=current_user.name%>' Family Cookbook </h1>
+ <h1 class="title-page"><%=@book.title%></h1>
 </div>
 <% recipe_pages = {} %>
 <% @book.recipes.each_with_index do |recipe, index| %>
-<% recipe_pages[recipe.id] = ((index) * 2) + 1 %>
-<div class="page-container" style="border: 1px solid red">
+<% recipe_pages[recipe.id] = ((index) * 2) + 2 %>
+<!-- <div class="page-container" style="border: 1px solid red">
    photo title page
-</div>
+</div> -->
 <div class="page-container" style="border: 1px solid red">
   <h1><%= recipe.name %></h1>
   <h2>Description:</h2>
