@@ -14,39 +14,9 @@
  */
 body {
   -webkit-font-smoothing: antialiased;
-	font-family: 'Alegreya', serif;
-	background-color: #a69b9778;
+	font-family: 'Josefin Slab', serif;
+	background-color: #e4c47ecc;
 	color: #451a5e;
-}
-
-/*Utilities*/
-
-.float-right {
-  float: right;
-}
-
-.float-left {
-  float: left;
-}
-
-.margin-s {
-  margin: 10px;
-}
-
-.margin-r {
-	margin-right: 10px;
-}
-
-.margin-m {
-	margin: 50px;
-}
-
-.margin-l {
-	margin: 100px;
-}
-
-.margin-zero {
-	margin: 0 auto;
 }
 
 .border-home {
@@ -54,6 +24,14 @@ body {
 }
 
 /*Components*/
+
+.bold-f {
+	font-weight: 600;
+}
+
+h1 {
+	font-family: 'Pacifico', cursive;
+}
 
 .home_page {
 	background-image: url(family_in_flour.jpg);
@@ -64,14 +42,16 @@ body {
   position: fixed;
   left: 0;
   color: #451a5e;
+
 }
 
 .header {	
-	background-color: #a69b97c9;
+	background-color: #efb537a8;
 	height: 100px;
 	line-height: 100px;
 	margin: 0 auto;
 	color: #451a5e;
+	font-family: 'Pacifico', cursive;
 }
 
 .header h2 {
@@ -84,6 +64,16 @@ a {
 
 .colors {
 	color: #451a5e;
-	background-color: #a69b97c9;
+	background-color: #efb537;
 }
 
+.card-colors {
+	background-color: #ecbe5887;
+}
+
+.purple-button {
+	color: #efb537;
+  background-color: #451a5ee3;
+ 	font-weight: 600;
+  font-size: 18px;
+}

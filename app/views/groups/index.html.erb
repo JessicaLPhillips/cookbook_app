@@ -1,9 +1,13 @@
-<h1 class="text-center"><%=current_user.name %>' Families</h1>
+<h1 class="text-center m-3"><%=current_user.name %>'s Groups</h1>
+<a href="groups/new" class="btn colors float-right mr-3 bold-f">Add a New Family Group</a>
 <div>
   <% @groups.each do |group| %>
-    <div>
-      <h3><%= link_to group.name, group_path(group) %></h3>
-      <p>Location: <%= group.location %></p>
+		<div class="card w-75 m-4 p-3 shadow card-colors">
+      <div class="card-block">
+      	<h3 class="card-title">Group Name: <%= group.name %></h3>
+      	<p class="card-text">Location: <%= group.location %></p>
+      	<a class="btn purple-button mr-4 bold-f" href="groups/<%=group.id%>"> View This Group </a>
+      </div>
+    </div>  	
   <% end %>
 </div>
-<a href="groups/new" class="btn colors">Add a New Family Group</a>

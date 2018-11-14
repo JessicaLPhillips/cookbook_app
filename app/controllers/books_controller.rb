@@ -44,4 +44,3 @@ before_action :authenticate_user!
     params.require(:book).permit(:title, :intro, recipe_ids:[])
   end
 end
-
