@@ -15,7 +15,7 @@
 body {
   -webkit-font-smoothing: antialiased;
 	font-family: 'Josefin Slab', serif;
-	background-color: #e4c47ecc;
+/*	background-color: #e4c47ecc;*/
 	color: #451a5e;
 }
 
@@ -68,7 +68,7 @@ a {
 }
 
 .card-colors {
-	background-color: #ecbe5887;
+	background-color: #f6e4ba;
 }
 
 .purple-button {
@@ -76,4 +76,14 @@ a {
   background-color: #451a5ee3;
  	font-weight: 600;
   font-size: 18px;
+}
+
+.bg-image {
+	background-image: url(mini-cakes.jpg);
+	background-size: cover;
+	min-height: 100%;
+	width: 100%;
+  height: auto;
+  position: absolute;
+  left: 0;
 }

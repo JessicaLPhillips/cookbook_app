@@ -1,3 +1,5 @@
+// Large PDF Format
+
 .page-container {
   clear: both;
   display: block;
@@ -22,6 +24,24 @@ h1 {
   page-break-before: always; 
 }
 
-.image {
-  padding-top: 50px;
+.padding {
+  padding-top: 20px;
+  padding-bottom: 20px;
 }
+
+
+// Small PDF Format
+.page-container-s {
+  clear: both;
+  display: block;
+  height: 1200px;
+  padding-left: 40px;
+  padding-right: 40px;
+  position: relative;
+ } 
+
+ .title-page-s {
+  font-size: 50 px;
+  padding-top: 30px;
+ }
+

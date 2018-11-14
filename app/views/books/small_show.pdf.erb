@@ -1,13 +1,13 @@
-<div class="page-container">
- <h1 class="title-page"><%=@book.title%></h1>
+<div class="page-container-s">
+ <h1 class="title-page-s"><%=@book.title%></h1>
 </div>
-<div class="page-container">
+<div class="page-container-s">
    photo title page
 </div>
 <% recipe_pages = {} %>
 <% @book.recipes.each_with_index do |recipe, index| %>
 <% recipe_pages[recipe.id] = ((index) * 2) + 2 %>
-<div class="page-container">
+<div class="page-container-s">
   <h1><%= recipe.name %></h1>
   <h2>Description:</h2>
     <p><%= recipe.description %></p>
@@ -20,16 +20,16 @@
   </div>
 <% end %>
 </div>
-<div class="page-container">
+<div class="page-container-s">
   <h1>Appendix: Recipes By Ingredient</h1>
   <% @grouped_ingredients.each do |ingredient_name, instances| %>
     <div class="padding">
-      <h2><%= ingredient_name %></h2>
-      <ul>
-        <% instances.each do |ingredient| %>
-          <li>....<%= ingredient.recipe.name %> (page <%= recipe_pages[ingredient.recipe.id] %>)</li>
-        <% end %>
-      </ul>
-    </div>  
+    <h2><%= ingredient_name %></h2>
+    <ul>
+      <% instances.each do |ingredient| %>
+        <li>....<%= ingredient.recipe.name %> (page <%= recipe_pages[ingredient.recipe.id] %>)</li>
+      <% end %>
+    </ul>
   <% end %>
+    </div>
 </div>
