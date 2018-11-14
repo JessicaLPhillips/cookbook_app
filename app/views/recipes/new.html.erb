@@ -15,13 +15,13 @@
     <div class="select"><%=f.input :category, as: :select,
      collection: ["Appetizers", "Soups & Salads", "Main Courses", "Breads", "Desserts"] %></div>
   </div>   
-  <h3>Ingredients</h3>
+  <h4>Ingredients</h4>
   <div>
     <%= f.simple_fields_for :ingredients do |ingredient| %>
       <%= render 'ingredient_fields', :f => ingredient %>
     <% end %>
     <div>
-      <%= link_to_add_association 'Add Ingredient', f, :ingredients %>
+      <%= link_to_add_association 'Click to Add Ingredient', f, :ingredients %>
     </div>
   </div>
   <div class="form-group">
