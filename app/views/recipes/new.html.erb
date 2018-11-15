@@ -1,3 +1,4 @@
+<div class="bg-image">
 <h1 class="text-center m-3">Create a New Recipe</h1>
 <div>
   <%= simple_form_for @recipe do |f| %>
@@ -8,34 +9,45 @@
       <% end %>
       </ul>
   <% end %>
-  <div class="form-group">
-    <div><%=f.input :picture, as: :file %></div>
-    <div class=""> <%= f.input :name %></div>
-    <div class=""><%= f.input :description %></div>
-    <div class="select"><%=f.input :category, as: :select,
-     collection: ["Appetizers", "Soups & Salads", "Main Courses", "Breads", "Desserts"] %></div>
-  </div>   
-  <h4>Ingredients</h4>
-  <div>
-    <%= f.simple_fields_for :ingredients do |ingredient| %>
+<!--   <div class="form-group">
+    <div><%=f.input :picture, as: :file %></div> -->
+  <div class="form-group forms w-50 m-3">
+    <label for="Name">Recipe Name:</label>
+    <input type="text" class="form-control form-control-lg" id="RecipeName" placeholder="Recipe Name" required>
+    <div class="invalid-feedback">Name can't be blank</div> 
+  </div>  
+  <div class="form-group w-50 m-3 forms">
+    <label for="Recipe Description">Description</label>
+    <textarea class="form-control" id="Recipe Description" rows="3"></textarea>
+  </div>
+<div class="form-group forms w-50 m-3">
+    <label for="Select Category">Category</label>
+    <select class="form-control" id="exampleSelectLanguage" required>
+      <option value="">Select your Category</option>
+      <option value="apps">Appetizers</option>
+      <option value="soups">Soups & Salads</option>
+      <option value="main">Main Courses</option>
+      <option value="bread">Breads</option>
+      <option value="dessert">Desserts</option>
+    </select>
+    <div class="invalid-feedback">Please provide a valid value.</div>
+    <div class="valid-feedback">Looks good!</div>
+  </div>
+  <div class="form-group forms w-50 m-3">
+  <h4 class="forms mr-2">Ingredients</h4>
+    <div>
+      <%= f.simple_fields_for :ingredients do |ingredient| %>
       <%= render 'ingredient_fields', :f => ingredient %>
-    <% end %>
+      <% end %>
     <div>
       <%= link_to_add_association 'Click to Add Ingredient', f, :ingredients %>
     </div>
+    </div>
+  </div>  
+  <div class="form-group w-50 m-3 forms">
+    <label for="Instructions">Instructions</label>
+    <textarea class="form-control" id="Instructions" rows="3"></textarea>
   </div>
-  <div class="form-group">
-    <%= f.input :instructions, as: :text %> 
-  </div>
-  	<div class=""><%= f.button :submit %></div>
+  <button type="submit" class="btn purple-button ml-5 mt-3">Create Recipe</button>
   <% end %>
 </div>
-
-  
-<div class="form-label-group">
-    <input type="email" class="form-control" id="exampleInputEmail" placeholder="Enter email" autocomplete="email" required>
-    <label for="exampleInputEmail">Email address</label>
-    <div class="invalid-feedback">Email can't be blank</div>
-    <div class="valid-feedback">Looks good!</div>
-    <small class="form-text text-muted">We'll never share your email with anyone else.</small>
-  </div>

@@ -15,7 +15,6 @@
 body {
   -webkit-font-smoothing: antialiased;
 	font-family: 'Josefin Slab', serif;
-/*	background-color: #e4c47ecc;*/
 	color: #451a5e;
 }
 
@@ -73,7 +72,7 @@ a {
 
 .purple-button {
 	color: #efb537;
-  background-color: #451a5ee3;
+  background-color: #451a5e;
  	font-weight: 600;
   font-size: 18px;
 }
@@ -86,4 +85,8 @@ a {
   height: auto;
   position: absolute;
   left: 0;
+}
+
+.forms {
+	font-size: 30px;
 }
