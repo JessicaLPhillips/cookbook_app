@@ -1,8 +1,6 @@
 <div class="page-container-s">
  <h1 class="title-page-s"><%=@book.title%></h1>
-</div>
-<div class="page-container-s">
-   photo title page
+ <h2 class="author-s"> By: <%= current_user.name %></h2>
 </div>
 <% recipe_pages = {} %>
 <% @book.recipes.each_with_index do |recipe, index| %>
@@ -23,7 +21,7 @@
 <div class="page-container-s">
   <h1>Appendix: Recipes By Ingredient</h1>
   <% @grouped_ingredients.each do |ingredient_name, instances| %>
-    <div class="padding">
+    <div>
     <h2><%= ingredient_name %></h2>
     <ul>
       <% instances.each do |ingredient| %>

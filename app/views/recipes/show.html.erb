@@ -1,13 +1,15 @@
-<h1><%= @recipe.name %></h1>
+<div class="bg-image">
+<h1 class="text-center"><%= @recipe.name %></h1>
 <% if @recipe.picture.attached? %>
 	<%= image_tag @recipe.picture.variant(resize: '100x200') %>
 <% end %>
-<h2>Description:</h2>
-	<p><%= @recipe.description %></p>
-<h2>Ingredients:</h2>
+<h2 class="m-3 bold-f">Description:</h2>
+	<p class="m-3"><%= @recipe.description %></p>
+<h2 class="m-3 bold-f">Ingredients:</h2>
 	<% @recipe.ingredients.each do |ingredient|%>
-		<p><%= ingredient.quantity %> 
+		<p class="m-3"><%= ingredient.quantity %> 
 			<%= ingredient.name %></p>	
 	<% end %>	
-<h2>Instructions:</h2>
-	<%= @recipe.instructions %>
+<h2 class="m-3 bold-f">Instructions:</h2>
+	<p class="m-3"> <%= @recipe.instructions %></p>
+</div>

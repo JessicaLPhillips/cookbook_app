@@ -1,6 +1,6 @@
 Rails.application.routes.draw do
 	root to: 'home#index'
-  resources :groups
+  resources :groups 
   resources :recipes
   resources :books do
     member do 

@@ -1,8 +1,6 @@
 <div class="page-container">
  <h1 class="title-page"><%=@book.title%></h1>
-</div>
-<div class="page-container">
-   photo title page
+ <h2 class="author">By: <%= current_user.name%> </h2>
 </div>
 <% recipe_pages = {} %>
 <% @book.recipes.each_with_index do |recipe, index| %>

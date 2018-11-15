@@ -1,4 +1,5 @@
-<h1 class="text-center m-3">Create a New Book</h1>
+<div class="container">
+  <h1 class="text-center m-3">Create a New Book</h1>
   <%= simple_form_for @book do |f| %>
     <% if flash[:book_errors] %>
       <ul>
@@ -7,44 +8,28 @@
       <% end %>
       </ul>
     <% end %>
-    <div><%=f.input :picture, as: :file %></div>
     <div> <%= f.input :title %></div>
+    <div><%=f.input :picture, as: :file %></div>
     <div class="form-group">
-       <label for="Intro">Introduction</label>
-        <textarea class="form-control w-50 m-2 p-2" id="Intro" rows="2" placeholder="Write Your Introduction Here"></textarea>
-
-  <h3>Recipes</h3>
-  <div>
-  	<ul class="nav nav-tabs" id="myTab" role="tablist">
-  	  <% current_user.groups.each_with_index do |group, index| %>
-	  	  <li class="nav-item">
-	  	  	<a class="nav-link <%= index == 0 ? 'active' : ''%>" id="group-<%= group.id %>-tab" data-toggle="tab" href="#group-<%= group.id %>" role="tab" aria-controls="profile" aria-selected="false"><%= group.name %>' Recipes</a>
-	  	  </li>
-			<% end %>
-  	</ul>
-  	<div class="tab-content m-3" id="myTabContent">
-  	  <% current_user.groups.each_with_index do |group, index| %>
-			  <div class="tab-pane fade show <%= index == 0 ? 'active' : ''%>" id="group-<%= group.id %>" role="tabpanel" aria-labelledby="group-<%= group.id%>-tab">
-		  		<%= f.association :recipes, collection: group.recipes, as: :check_boxes %>
-			  </div>
-			<% end %>
-  	</div>
-  </div>
-  	<div><%= f.button :submit, class: 'colors'%></div>
+      <label for="Intro">Introduction</label>
+      <textarea class="form-control w-50 m-2 p-2" id="Intro" rows="2" placeholder="Write Your Introduction Here"></textarea>
+      <div>
+      	<ul class="nav nav-tabs" id="myTab" role="tablist">
+      	  <% current_user.groups.each_with_index do |group, index| %>
+    	  	  <li class="nav-item">
+    	  	  	<a class="nav-link <%= index == 0 ? 'active' : ''%>" id="group-<%= group.id %>-tab" data-toggle="tab" href="#group-<%= group.id %>" role="tab" aria-controls="profile" aria-selected="false"><%= group.name %>'s Recipes</a>
+    	  	  </li>
+    			<% end %>
+      	</ul>
+      	<div class="tab-content m-3" id="myTabContent">
+      	  <% current_user.groups.each_with_index do |group, index| %>
+    			  <div class="tab-pane fade show <%= index == 0 ? 'active' : ''%>" id="group-<%= group.id %>" role="tabpanel" aria-labelledby="group-<%= group.id%>-tab">
+    		  		<%= f.association :recipes, collection: group.recipes, as: :check_boxes %>
+    			  </div>
+    			<% end %>
+      	</div>
+      </div>
+      <button type="submit" class="btn colors ml-5 mt-3">Create Book</button>
+    </div>
   <% end %>
-
-  <div class="form-group">
-    <label for="exampleTextareaBio">Bio</label>
-    <textarea class="form-control" id="exampleTextareaBio" rows="2" placeholder="Tell us your story" required></textarea>
-    <div class="invalid-feedback">Please provide a valid value.</div>
-    <div class="valid-feedback">Looks good!</div>
-    <small class="form-text text-muted">Textarea input example</small>
-  </div>
-
-  <div class="form-group">
-    <label for="exampleInputPassword">Password</label>
-    <input type="password" class="form-control" id="exampleInputPassword" placeholder="Password" autocomplete="current-password" required>
-    <div class="invalid-feedback">Please provide a valid value.</div>
-    <div class="valid-feedback">Looks good!</div>
-    <small class="form-text text-muted">Password input example</small>
-  </div>
+</div>
