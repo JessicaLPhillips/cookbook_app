@@ -2,6 +2,7 @@ class BooksController < ApplicationController
 before_action :authenticate_user!
 
   def index
+    @books = Book.all
   end
 
   def show
@@ -12,7 +13,23 @@ before_action :authenticate_user!
       format.pdf do
         render pdf: "file_name", layout: "book",
           page_size: 'Letter',
-          margin: { right: 1, left: 1, top: 2, bottom: 2 },
+          margin: { right: 4, left: 1, top: 2, bottom: 5 },
+          footer: {right: '[page]'},
+          dpi: 96
+      end
+    end
+  end
+
+  def small_show
+    @book = Book.find(params[:id])
+    @grouped_ingredients = @book.recipes.map(&:ingredients).flatten.group_by { |ingredient| ingredient.name }
+    respond_to do |format|
+      format.html
+      format.pdf do
+        render pdf: "file_name", layout: "book",
+          page_size: 'Executive',
+          margin: { right: 1, left: 1, top: 1.5, bottom: 4 },
+          footer: {right: '[page]'},
           dpi: 96
       end
     end

@@ -7,6 +7,7 @@ class GroupsController < ApplicationController
 
   def create
     @group = Group.new(group_params)
+    @group.users << current_user
       if @group.save
         redirect_to group_path(@group), notice: "Group Created!"
       else
@@ -22,12 +23,20 @@ class GroupsController < ApplicationController
   end
 
   def index
+    @my_groups = current_user.groups.all
     @groups = Group.all
   end
 
   def show
     @group = Group.find(params[:id])
   end
+
+  def add_user
+    @group = Group.find(params[:id])
+    unless current_user.groups.include?(@group)
+      @group.users << current_user
+    end
+  end  
 
   def group_params
     params.require(:group).permit(:name, :location, :pictures, user_attributes:[:name, :avatar])

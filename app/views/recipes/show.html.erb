@@ -1,13 +1,20 @@
-<h1><%= @recipe.name %></h1>
-<% if @recipe.picture.attached? %>
-	<%= image_tag @recipe.picture.variant(resize: '100x200') %>
-<% end %>
-<h2>Description:</h2>
-	<p><%= @recipe.description %></p>
-<h2>Ingredients:</h2>
-	<% @recipe.ingredients.each do |ingredient|%>
-		<p><%= ingredient.quantity %> 
-			<%= ingredient.name %></p>	
-	<% end %>	
-<h2>Instructions:</h2>
-	<%= @recipe.instructions %>
+<div class="bg-image">
+  <a class="btn btn-lg colors float-right m-4 bold-f" href="books/new"> Create a Book </a>
+  <h1 class="text-center my-5"><%= @recipe.name %></h1>
+  <div class="container mb-3">
+    <div class="card">
+          <% if @recipe.picture.attached? %>
+            <%= image_tag @recipe.picture.variant(resize: '100x200') %>
+          <% end %>
+        <h2 class="text-center m-3 bold-f">Description:</h2>
+          <p class="text-center m-3"><%= @recipe.description %></p>
+        <h2 class="text-center m-3 bold-f">Ingredients:</h2>
+          <% @recipe.ingredients.each do |ingredient|%>
+            <p class="text-center m-3"><%= ingredient.quantity %> 
+              <%= ingredient.name %></p>  
+          <% end %> 
+        <h2 class="text-center m-3 bold-f">Instructions:</h2>
+          <p class="text-center m-3 pb-3"> <%= @recipe.instructions %></p>
+    </div>    
+  </div>      
+</div>

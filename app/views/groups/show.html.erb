@@ -1,15 +1,16 @@
-<h1 class="pt-3 text-center">Family Name: <%= @group.name%></h1>
-<h1 class="pt-3 text-center">Location: <%= @group.location%></h1>
-<h2> Family Members: 
-	<% @group.users.each do |user|%>
-	<h3> 
-		<%= user.name%>
-	</h3>
-	<% end %>
-</h2>
-<h2> Recipes In This Family:</h2>
-<% @group.recipes.each do |recipe|%>
-<h3>
-<%= link_to recipe.name, recipe_path(recipe) %>
-</h3>
-<% end %>
+<div class= "bg-image">
+	<h1 class="pt-3 text-center">Family Name: <%= @group.name%></h1>
+	<h1 class="pt-3 text-center m-3 pb-3">Location: <%= @group.location%></h1>
+		<div class= "container">
+			<div class="card">
+				<h2 class="bold-f text-center m-3 pb-3"> Family Members: </h2>
+					<% @group.users.each do |user|%>
+						<h3 class="pl-3"><%= user.name%></h3>
+					<% end %>
+				<h2 class="bold-f text-center m-3 pb-3"> Recipes In This Family:</h2>
+					<% @group.recipes.each do |recipe|%>
+					<h3 class="pl-3"><%= link_to recipe.name, recipe_path(recipe) %></h3>
+					<% end %>
+			</div>
+		</div>
+</div>

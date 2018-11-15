@@ -1,5 +1,7 @@
+<div class="bg-image m-0">
 <h1 class="text-center m-3"><%=current_user.name %>'s Recipes</h1>
-<a href="recipes/new" class="btn colors float-right mr-3 bold-f">Add a New Recipe</a>
+<a class="btn btn-lg colors float-right mr-3 bold-f" href="recipes/new" >Add a New Recipe</a>
+<a class="btn btn-lg colors float-right mr-3 bold-f" href="books/new"> Create a Book </a>
 <% @recipes.each do |recipe|%>
 	<div class="card w-75 m-4 p-3 shadow card-colors">
     <div class="card-block">
@@ -9,3 +11,4 @@
     </div>
   </div>
 <% end %>
+</div>

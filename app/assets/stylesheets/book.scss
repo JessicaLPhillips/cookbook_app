@@ -1,3 +1,5 @@
+// Large PDF Format
+
 .page-container {
   clear: both;
   display: block;
@@ -6,22 +8,60 @@
   padding-right: 50px;
   padding-top: 30px;
   position: relative;
+
+  img {
+    max-height: 1268px;
+    max-width: 900px;
+  }
  } 
 
  .title-page {
-  font-size: 50px;
-  padding-left: 50px;
+  font-size: 100px;
+  font-family: 'Josefin Slab', serif;
+ }
+
+ .author {
+  font-family: 'Josefin Slab', serif;
+  font-size: 75px;
+  text-align: center;
  }
 
 h1 {
   font-size: 40px;
   text-align: center;
+  font-family: 'Josefin Slab', serif;
 }
 
 .always-break { 
   page-break-before: always; 
 }
 
-.image {
-  padding-top: 50px;
+.padding {
+  padding-top: 20px;
+  padding-bottom: 20px;
 }
+
+
+// Small PDF Format
+.page-container-s {
+  clear: both;
+  display: block;
+  height: 1200px;
+  padding-left: 40px;
+  padding-right: 40px;
+  padding-top: 30px;
+  position: relative;
+ } 
+
+ .title-page-s {
+  font-size: 85px;
+  text-align: center;
+  font-family: 'Josefin Slab', serif;
+ }
+
+.author-s {
+  font-family: 'Josefin Slab', serif;
+  font-size: 50px;
+  text-align: center;
+ }
+
