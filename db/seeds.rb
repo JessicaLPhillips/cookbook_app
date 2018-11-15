@@ -24,11 +24,11 @@
 	end
 end
 
-5.times do
+6.times do
 	group = Group.create({
 		name: Faker::Name.last_name,
 		location: Faker::Address.city,
-		users: User.all.sample(5)
+		users: User.all.sample(3)
 	})
 
 	group.recipes << group.users.map { |user| user.recipes.sample(2) }
