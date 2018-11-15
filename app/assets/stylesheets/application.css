@@ -33,7 +33,7 @@ h1 {
 }
 
 .home_page {
-	background-image: url(family_in_flour.jpg);
+	background-image: image-url(family_in_flour.jpg);
 	background-size: cover;
 	min-height: 100%;
 	width: 100%;
@@ -78,7 +78,7 @@ a {
 }
 
 .bg-image {
-	background-image: url(mini-cakes.jpg);
+	background-image: image-url(mini-cakes.jpg);
 	background-size: cover;
 	min-height: 100%;
 	width: 100%;
