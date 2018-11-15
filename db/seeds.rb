@@ -24,7 +24,7 @@
 	end
 end
 
-10.times do
+5.times do
 	group = Group.create({
 		name: Faker::Name.last_name,
 		location: Faker::Address.city,

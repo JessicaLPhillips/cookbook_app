@@ -1,23 +1,50 @@
 <div class="page-container">
- <h1 class="title-page"><%=@book.title%></h1>
- <h2 class="author">By: <%= current_user.name%> </h2>
+  <h1 class="title-page"><%=@book.title%></h1>
+  <h2 class="author">By: <%= current_user.name%> </h2>
 </div>
+
 <% recipe_pages = {} %>
+
 <% @book.recipes.each_with_index do |recipe, index| %>
-<% recipe_pages[recipe.id] = ((index) * 2) + 2 %>
-<div class="page-container">
-  <h1><%= recipe.name %></h1>
-  <h2>Description:</h2>
-    <p><%= recipe.description %></p>
-  <h2>Ingredients:</h2>
-    <% recipe.ingredients.each do |ingredient|%>
-      <p><%=ingredient.quantity%> <%= ingredient.name %></p>  
-    <% end %> 
-  <h2>Instructions:</h2>
-    <%= recipe.instructions %>
+  <% recipe_pages[recipe.id] = ((index) * 2) + 2 %>
+  <div class="page-container">
+    <% if index < 5 %>
+      <%= wicked_pdf_image_tag "facing-pages-#{index}" %>
+    <% else %>
+      (cool pic)
+    <% end %>
+  </div>
+  <div class="page-container">
+    <h1><%= recipe.name %></h1>
+    <div style="float: left; width: 50%;">
+      <h2>Description:</h2>
+      <p><%= recipe.description %></p>
+      <h2>Instructions:</h2>
+      <%= recipe.instructions %>
+    </div>
+    <div style="float: left; width: 50%;">
+      <h2>Ingredients:</h2>
+      <% recipe.ingredients.each do |ingredient|%>
+        <p><%=ingredient.quantity%> <%= ingredient.name %></p>  
+      <% end %> 
+    </div>
+    <hr>
+    <h1><%= recipe.name %></h1>
+    <div style="float: left; width: 50%;">
+      <h2>Description:</h2>
+      <p><%= recipe.description %></p>
+      <h2>Instructions:</h2>
+      <%= recipe.instructions %>
+    </div>
+    <div style="float: left; width: 50%;">
+      <h2>Ingredients:</h2>
+      <% recipe.ingredients.each do |ingredient|%>
+        <p><%=ingredient.quantity%> <%= ingredient.name %></p>  
+      <% end %> 
+    </div>
   </div>
 <% end %>
-</div>
+
 <div class="page-container">
   <h1>Appendix: Recipes By Ingredient</h1>
   <% @grouped_ingredients.each do |ingredient_name, instances| %>
