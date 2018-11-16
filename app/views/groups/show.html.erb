@@ -3,7 +3,7 @@
 	<%= link_to "Join This Group", join_group_group_path(@group), method: :put, class: " float-right btn purple-button mr-4 bold-f" %>
 	<h1 class="py-3 text-center m-3 pl-5">Location: <%= @group.location%></h1>
 		<div class= "container">
-			<div class="card">
+			<div class="card card-colors m-4 pb-3">
 				<h2 class="bold-f text-center m-3 pb-3"> Family Members: </h2>
 					<% @group.users.each do |user|%>
 						<h3 class="pl-3"><%= user.name%></h3>

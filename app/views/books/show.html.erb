@@ -1,15 +1,17 @@
 <div class="bg-image">
-<h1 class="text-center m-3"><%=current_user.name%>'s Custom Cookbook</h1>
-<h2 class="text-center m-3">Title: <%=@book.title%></h2>
-<h2 class="m-3 bold-f"> Recipes in This Cookbook: </h2>
-<% @book.recipes.each do |recipe| %>
-  <h3 class="m-2"><%= recipe.name %></h3>
-<% end %>
-<br>
-<h2 class="text-center m-3 bold-f">Click the Buttons Below To View Your Cookbook As a PDF</h2>
-<h3 class="m-3">Use the PDF's below to have your custom cookbook printed and bound professionally.  The large PDF is formatted to standard (8.5" x 11") letter size paper.  The smaller PDF is formatted to executive (7" x 10") size paper.  </h3>
-<%= link_to "Click to View Large PDF", book_path(@book, format: "pdf"), class: "btn purple-button m-4 bold-f" %>
-<%= link_to "Click to View Small PDF", small_show_book_path(@book, format: "pdf"), class: "btn purple-button m-4 bold-f" %>
+	<h1 class="text-center m-3"><%=current_user.name%>'s Custom Cookbook</h1>
+		<div class= "container">
+			<div class="card card-colors m-4 pb-3">
+				<h2 class="text-center m-3 bold-f">Title: <%=@book.title%></h2>
+				<h2 class="text-center m-3 bold-f"> Recipes in This Cookbook: </h2>
+					<% @book.recipes.each do |recipe| %>
+					  <h3 class="ml-3"><%= recipe.name %></h3>
+					<% end %>
+				<h2 class="text-center m-3 bold-f">Click the Buttons Below To View Your Cookbook As a PDF</h2>
+				<h3 class="m-3">Use the PDF below to have your custom cookbook printed and bound professionally.  The PDF is formatted to standard (8.5" x 11") letter size paper.</h3>
+				<%= link_to "Click to View PDF", book_path(@book, format: "pdf"), class: "btn purple-button m-4 bold-f" %>
+			</div>
+		</div>
 </div>
 
 

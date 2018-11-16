@@ -1,28 +1,15 @@
-<div class="bg-image">
-<h1 class="text-center">Create your Family Group Here</h1>
-  <div>
-   <%= form_for @group do |form| %>
-    <% if flash[:group_errors] %>
-      <ul>
-      <% flash[:group_errors].each do |msg| %>
-        <li><%= msg %></li>
-      <% end %>
-      </ul>
-    <% end %>
+<h1 class="text-center m-4">Create Your Family Here</h1>
+<div class="container">
+  <div class="card card-colors m-4 pb-3">
+    <div class="container p-5">
+      <%= simple_form_for @group, html: {class: "form forms"} do |f| %>
+        <%= flash[:group_errors] %>
   <div class="form-group forms w-50 m-5">
-    <label for="Name">Family Name:</label>
-    <input type="text" class="form-control form-control-lg" id="exampleInputName" placeholder="Your Family or Group Name" required>
-    <div class="invalid-feedback">Name can't be blank</div> 
+     <%= f.input :name, class: "form-control-lg" %>
   </div>  
   <div class="form-group forms w-50 m-5">
-    <label for="Location">Family Location:</label>
-    <input type="text" class="form-control form-control-lg" id="exampleInputLocation" placeholder="Your Family or Group Location" required>
-    <div class="invalid-feedback">Location can't be blank</div>
-    </div>
+    <%= f.input :location, class: "form-control-lg" %>
   </div>
   <button type="submit" class="btn purple-button ml-5 mt-3">Create Group</button>
   <% end %>
 </div>
-
-
- 

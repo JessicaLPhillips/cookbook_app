@@ -1,7 +1,7 @@
+<h1 class="text-center my-5">Create a New Book</h1>
 <div class="container">
-  <div class="card">
+  <div class="card card-colors m-4 pb-3">
     <div class="container p-5">
-      <h1 class="text-center m-3">Create a New Book</h1>
       <%= simple_form_for @book, html: {class: "form forms"} do |f| %>
         <%= flash[:book_errors] %>
         <%=f.input :picture, as: :file, class: "form-control" %>
