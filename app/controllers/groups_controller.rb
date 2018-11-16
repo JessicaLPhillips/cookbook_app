@@ -31,7 +31,7 @@ class GroupsController < ApplicationController
     @group = Group.find(params[:id])
   end
 
-  def add_user
+  def join_group
     @group = Group.find(params[:id])
     unless current_user.groups.include?(@group)
       @group.users << current_user

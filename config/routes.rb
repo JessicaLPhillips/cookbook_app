@@ -1,6 +1,10 @@
 Rails.application.routes.draw do
 	root to: 'home#index'
-  resources :groups 
+  resources :groups do
+    member do
+      put :join_group
+    end
+  end   
   resources :recipes
   resources :books do
     member do 

@@ -1,6 +1,7 @@
 <div class= "bg-image">
 	<h1 class="pt-3 text-center">Family Name: <%= @group.name%></h1>
-	<h1 class="pt-3 text-center m-3 pb-3">Location: <%= @group.location%></h1>
+	<%= link_to "Join This Group", join_group_group_path(@group), method: :put, class: " float-right btn purple-button mr-4 bold-f" %>
+	<h1 class="py-3 text-center m-3 pl-5">Location: <%= @group.location%></h1>
 		<div class= "container">
 			<div class="card">
 				<h2 class="bold-f text-center m-3 pb-3"> Family Members: </h2>
