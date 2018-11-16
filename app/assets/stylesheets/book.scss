@@ -1,16 +1,20 @@
 // Large PDF Format
+body {
+  font-family: 'Open Sans', sans-serif;
+}
+
 
 .page-container {
   clear: both;
   display: block;
-  height: 1268px;
+  height: 1258px;
   padding-left: 50px;
   padding-right: 50px;
-  padding-top: 30px;
+  padding-top: 25px;
   position: relative;
 
   img {
-    max-height: 1268px;
+    max-height: 1258px;
     max-width: 900px;
   }
  } 
@@ -18,12 +22,14 @@
  .title-page {
   font-size: 100px;
   font-family: 'Josefin Slab', serif;
+  color: #380e50;
  }
 
  .author {
   font-family: 'Josefin Slab', serif;
   font-size: 75px;
   text-align: center;
+  color: #380e50;
  }
 
 h1 {
@@ -39,6 +45,11 @@ h1 {
 .padding {
   padding-top: 20px;
   padding-bottom: 20px;
+}
+
+.recipe-page {
+  float: left;
+  width: 50%;
 }
 
 

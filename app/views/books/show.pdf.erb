@@ -8,21 +8,17 @@
 <% @book.recipes.each_with_index do |recipe, index| %>
   <% recipe_pages[recipe.id] = ((index) * 2) + 2 %>
   <div class="page-container">
-    <% if index < 5 %>
-      <%= wicked_pdf_image_tag "facing-pages-#{index}" %>
-    <% else %>
-      (cool pic)
-    <% end %>
+    <%= wicked_pdf_image_tag "facing-pages-#{index}" %>
   </div>
   <div class="page-container">
     <h1><%= recipe.name %></h1>
-    <div style="float: left; width: 50%;">
+    <div class="recipe-page">
       <h2>Description:</h2>
       <p><%= recipe.description %></p>
       <h2>Instructions:</h2>
       <%= recipe.instructions %>
     </div>
-    <div style="float: left; width: 50%;">
+    <div class="recipe-page">
       <h2>Ingredients:</h2>
       <% recipe.ingredients.each do |ingredient|%>
         <p><%=ingredient.quantity%> <%= ingredient.name %></p>  
@@ -30,13 +26,13 @@
     </div>
     <hr>
     <h1><%= recipe.name %></h1>
-    <div style="float: left; width: 50%;">
+    <div class="recipe-page">
       <h2>Description:</h2>
       <p><%= recipe.description %></p>
       <h2>Instructions:</h2>
       <%= recipe.instructions %>
     </div>
-    <div style="float: left; width: 50%;">
+    <div class="recipe-page">
       <h2>Ingredients:</h2>
       <% recipe.ingredients.each do |ingredient|%>
         <p><%=ingredient.quantity%> <%= ingredient.name %></p>  
